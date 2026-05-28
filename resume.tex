@@ -1,0 +1,45 @@
+% techResume LaTeX Template based on AltaCV
+%
+% This template has been downloaded from:
+% https://github.com/alexcalabrese/techResume
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{cv}
+\geometry{left=1cm,right=1cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+\usepackage{paracol}
+\usepackage{hyperref}
+
+\usepackage[default]{lato}
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\begin{document}
+\name{Tommaso Crippa}
+\tagline{High Performance Computing Engineering Student}
+\personalinfo{
+	\email{crippa.tommaso@gmail.com}
+	\github{Crippius}
+	\linkedin{tommaso-crippa}
+}
+
+\makecvheader
+
+\AtBeginEnvironment{itemize}{\small}
+
+\columnratio{0.55}
+
+\begin{paracol}{1}       
+        
+    \input{sections/education.tex}
+    
+    \input{sections/experiences.tex}
+    
+    \input{sections/projects.tex}
+	
+    \input{sections/skills.tex}
+     
+
+\end{paracol}
+
+\end{document}
