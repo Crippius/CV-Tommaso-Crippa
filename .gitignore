@@ -1,0 +1,102 @@
+# LaTeX auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+# Bibliography
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+# Build artifacts
+*.dvi
+*.xdv
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+*.ps
+
+# Compiled output (keep .pdf in source control if desired, remove next line)
+# *.pdf
+
+# latexmk
+*.fdb_latexmk
+
+# nomenclature
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.lzo
+*.lzs
+*.slg
+*.slo
+*.sls
+
+# index
+*.idx
+*.ilg
+*.ind
+*.ist
+
+# minitoc
+*.maf
+*.mlf
+*.mlt
+*.mtc
+*.mtc0
+
+# glossaries
+*.nlg
+*.nlo
+*.nls
+
+# glossaries-extra
+*.ist
+
+# todonotes
+*.tdo
+
+# pdfcomment
+*.upa
+*.upb
+
+# hyperref
+*.brf
+
+# Misc
+*.cut
+*.hd
+*.lox
+*.nav
+*.pre
+*.sav
+*.snm
+*.vrb
+*.xcp
+*.xmpi
+*.xwm
+*.xyc
+*.xyp
+
+# Overleaf / editor cruft
+.DS_Store
+Thumbs.db
