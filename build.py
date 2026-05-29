@@ -2,6 +2,7 @@
 """Assemble resume.tex from a named profile and optionally compile it."""
 
 import argparse
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -13,6 +14,12 @@ CONTENT = ROOT / "content"
 PROFILES = ROOT / "profiles"
 TEMPLATE = ROOT / "resume_template.tex"
 OUTPUT = ROOT / "resume.tex"
+
+PROFILE_FLAGS = {
+    "data-engineer": {"de": True,  "hpc": False, "phd": False},
+    "hpc":           {"de": False, "hpc": True,  "phd": False},
+    "phd":           {"de": False, "hpc": False, "phd": True},
+}
 
 
 def load_yaml(path: Path) -> dict:
@@ -80,10 +87,25 @@ def assemble(profile_name: str) -> str:
     skills_prog = build_skills_list(prog_ids, all_skills["tech_stack"])
     skills_tools = build_skills_list(tool_ids, all_skills["infrastructure"])
 
+    flags = PROFILE_FLAGS.get(profile_name, {})
+    flag_lines = [
+        f"\\newif\\if{name}\\{name}{'true' if flags.get(name, False) else 'false'}"
+        for name in ["de", "hpc", "phd"]
+    ]
+    profile_flags_block = "\n".join(flag_lines)
+
+    summary_raw = profile.get("summary", "")
+    summary_block = (
+        f"\\begin{{quote}}\n\\small {summary_raw}\n\\end{{quote}}\n"
+        if summary_raw else ""
+    )
+
     template = TEMPLATE.read_text()
     result = (
         template
+        .replace("%%PROFILE_FLAGS%%", profile_flags_block)
         .replace("%%TAGLINE%%", tagline)
+        .replace("%%SUMMARY%%", summary_block)
         .replace("%%EXPERIENCES%%", experiences)
         .replace("%%PROJECTS%%", projects)
         .replace("%%COURSES%%", courses)
@@ -93,27 +115,48 @@ def assemble(profile_name: str) -> str:
     return result
 
 
+def compile_tex() -> Path:
+    subprocess.run(
+        ["latexmk", "-pdf", "-xelatex", "-interaction=nonstopmode", "-f", "resume.tex"],
+        cwd=ROOT,
+    )
+    pdf = ROOT / "resume.pdf"
+    if not pdf.exists():
+        sys.exit("LaTeX compilation failed — no resume.pdf produced")
+    (ROOT / "creationdate.lua").unlink(missing_ok=True)
+    return pdf
+
+
 def main():
     parser = argparse.ArgumentParser(description="Assemble resume.tex from a profile")
-    parser.add_argument("--profile", required=True, help="Profile name (filename without .yaml)")
+    parser.add_argument("--profile", help="Profile name (filename without .yaml). If omitted, builds all profiles.")
     parser.add_argument("--no-compile", action="store_true", help="Write resume.tex but skip LaTeX compilation")
     args = parser.parse_args()
 
-    tex = assemble(args.profile)
-    OUTPUT.write_text(tex)
-    print(f"Written {OUTPUT}")
+    profiles = (
+        [args.profile] if args.profile
+        else sorted(p.stem for p in PROFILES.glob("*.yaml"))
+    )
+    multi = len(profiles) > 1
 
-    if not args.no_compile:
-        # -f forces completion despite the pre-existing pdfx CreationDate warning
-        subprocess.run(
-            ["latexmk", "-pdf", "-xelatex", "-interaction=nonstopmode", "-f", "resume.tex"],
-            cwd=ROOT,
-        )
-        pdf = ROOT / "resume.pdf"
-        if not pdf.exists():
-            sys.exit("LaTeX compilation failed — no resume.pdf produced")
-        (ROOT / "creationdate.lua").unlink(missing_ok=True)
-        print(f"Compiled {pdf}")
+    if multi and not args.no_compile:
+        builds_dir = ROOT / "builds"
+        builds_dir.mkdir(exist_ok=True)
+
+    for profile_name in profiles:
+        tex = assemble(profile_name)
+        OUTPUT.write_text(tex)
+        print(f"Written {OUTPUT} [{profile_name}]")
+
+        if not args.no_compile:
+            # -f forces completion despite the pre-existing pdfx CreationDate warning
+            pdf = compile_tex()
+            if multi:
+                dest = builds_dir / f"resume_{profile_name}.pdf"
+                shutil.copy2(pdf, dest)
+                print(f"Compiled {dest}")
+            else:
+                print(f"Compiled {pdf}")
 
 
 if __name__ == "__main__":
