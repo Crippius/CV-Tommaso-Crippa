@@ -1,0 +1,23 @@
+tech_stack:
+  python: "Python (Advanced)"
+  c: "C"
+  cpp: "C++"
+  java: "Java"
+  js: "Javascript"
+  matlab: "MATLAB"
+  pandas: "Pandas"
+  numpy: "NumPy"
+  spark: "Spark"
+  kafka: "Kafka"
+  sql: "SQL (Advanced)"
+  tensorflow: "TensorFlow"
+  pytorch: "PyTorch (Advanced)"
+
+infrastructure:
+  git: "Git (Advanced)"
+  slurm: "SLURM (Advanced)"
+  dvc: "DVC"
+  docker: "Docker"
+  kubernetes: "Kubernetes"
+  aws: "AWS"
+  cuda: "CUDA"

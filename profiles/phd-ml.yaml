@@ -1,0 +1,34 @@
+tagline: "High Performance Computing Engineering Student"
+
+experiences:
+  - megware
+  - eurohpc
+  - gdg
+
+projects:
+  - alzheimer
+  - graph-coloring
+  - active-learning
+  - streaming-bench
+
+courses:
+  - ann-dl
+  - nlp
+  - selected-topics-ai
+  - quantum-algorithms
+  - applied-stats
+  - time-series
+  - parallel-computing
+
+skills:
+  tech_stack:
+    - python
+    - c
+    - cpp
+    - pytorch
+    - tensorflow
+  infrastructure:
+    - git
+    - slurm
+    - dvc
+    - cuda

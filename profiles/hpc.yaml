@@ -1,0 +1,32 @@
+tagline: "High Performance Computing Engineering Student"
+
+experiences:
+  - megware
+  - eurohpc
+  - gdg
+
+projects:
+  - alzheimer
+  - graph-coloring
+  - whatsapp
+
+courses:
+  - parallel-computing
+  - advanced-arch
+  - hpc-analytics
+  - prog-ml-hpc
+  - ann-dl
+  - time-series
+
+skills:
+  tech_stack:
+    - python
+    - c
+    - cpp
+    - java
+    - spark
+  infrastructure:
+    - git
+    - slurm
+    - dvc
+    - cuda

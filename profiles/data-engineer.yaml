@@ -1,0 +1,29 @@
+tagline: "High Performance Computing Engineering Student"
+
+experiences:
+  - megware
+  - gdg
+
+projects:
+  - streaming-bench
+  - active-learning
+  - whatsapp
+  - alzheimer
+
+courses:
+  - streaming-analytics
+  - time-series
+  - ann-dl
+
+skills:
+  tech_stack:
+    - python
+    - java
+    - spark
+    - kafka
+    - sql
+  infrastructure:
+    - git
+    - dvc
+    - docker
+    - aws
