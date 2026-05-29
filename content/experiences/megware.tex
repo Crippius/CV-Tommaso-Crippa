@@ -13,9 +13,26 @@
 
 \smallskip
 \begin{itemize}
-    \item Developing a performance analysis tool to automatically detect bottlenecks in HPC applications and providing optimization recommendations for HPC users.
 
-    \item Processing high-resolution multivariate time series metrics with heuristics and ML approaches to detect anomalies and validating them on real-world HPC workloads.
+    \ifde
+        \item Building a deployed analytics service that ingests $\sim$5,000 data points per minute from 100+ HPC metrics, applies ML-based anomaly detection, and delivers actionable bottleneck reports to HPC users.
+    \else
+        \ifhpc
+            \item Developing a performance analysis tool that detects different bottleneck types from 100+ multivariate time-series metrics ingested at $\sim$5,000 data points per minute, using heuristic decision trees and weakly-supervised Random Forest classifiers.
+        \else
+            \item Developing an ML pipeline that applies an end-to-end ml pipeline to 100+ HPC time-series metrics at $\sim$5,000 data points per minute, detecting 7 bottleneck classes validated on real-world HPC workloads.
+        \fi
+    \fi
+
+    \ifde
+        \item Designing the end-to-end data architecture: from the initial data ingestion and transformation to the automated ml pipeline to enable optimization recommendations without source-code instrumentation.
+    \else
+        \ifhpc
+            \item Implementing an end-to-end pipeline using a dual-strategy engine (heuristic-based and ml-based) to detect pipeline stalls, cache pressure, and intra/inter-node load imbalance without source-code instrumentation.
+        \else
+            \item Implementing a dual-strategy detection engine combining threshold-based heuristics with Random Forest models trained on weak labels, using tsfresh for automated feature extraction and FDR-based selection across 7 bottleneck types.
+        \fi
+    \fi
 
 \end{itemize}
 

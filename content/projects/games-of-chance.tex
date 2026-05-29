@@ -5,7 +5,15 @@
 {Crippius/Games-of-Chance}}
 \begin{itemize}
 
-    \item Created a project that could simulate five different casino games and used the same program to study the statistics and probabilities of the gambling industry and how it takes advantage of them to make a profit.
+    \ifde
+        \item Built Python simulations of 5 casino games (Roulette, Blackjack, Baccarat, Slot Machine, Heads-or-Tails), analysing house-edge statistics and player return distributions with pandas and matplotlib to quantify how the gambling industry systematically extracts profit.
+    \else
+        \ifhpc
+            \item Built Python simulations of 5 casino games (Roulette, Blackjack, Baccarat, Slot Machine, Heads-or-Tails), analysing house-edge statistics and player return distributions with pandas and matplotlib to quantify how the gambling industry systematically extracts profit.
+        \else
+            \item Implemented Monte Carlo simulations of 5 casino games (Roulette, Blackjack, Baccarat, Slot Machine, Heads-or-Tails) in Python, modelling probabilistic outcomes and analysing expected-value and variance to characterise the statistical mechanisms underlying the house edge.
+        \fi
+    \fi
 
 \end{itemize}
 

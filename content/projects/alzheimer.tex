@@ -11,7 +11,15 @@
 {justvicthor/Early\_Alzheimer\_Detection\_DL}}
 \begin{itemize}
 
-\item Developed a deep learning model for early detection of Alzheimer's disease, implementing data preprocessing and augmentation pipelines to analyze medical imaging data with gradCAM visualizations and improve diagnostic accuracy on MeluXina supercomputer.
+\ifde
+    \item Developed a deep learning model for early Alzheimer's detection, achieving Macro-AUC of 0.9197 on the test set, improving upon the original paper (0.80), with full data preprocessing and augmentation pipelines run on the MeluXina supercomputer.
+\else
+    \ifhpc
+        \item Trained a 3D CNN for Alzheimer's classification on the ADNI dataset using the MeluXina EuroHPC supercomputer, implementing SLURM-scheduled preprocessing pipelines and GPU-parallelised training achieving Macro-AUC of 0.9197, up from 0.80 baseline.
+    \else
+        \item Trained a 3D CNN on ADNI structural MRI data for 3-class Alzheimer's staging (CN/MCI/AD), achieving Macro-AUC 0.9197 on the test set and outperforming the original paper baseline of 0.80; used Grad-CAM for interpretability of the decision-making process.
+    \fi
+\fi
 
 \end{itemize}
 

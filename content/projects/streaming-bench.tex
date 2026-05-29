@@ -10,7 +10,15 @@
 {Streaming-Data-Analytics/Benchmarking-Detectors-in-SML}}
 \begin{itemize}
 
-    \item Conducted comprehensive benchmarking of various change detection algorithms in different Streaming Machine Learning scenarios using CapyMOA, evaluating their performance with various metrics on both synthetic and real streams.
+    \ifde
+        \item Benchmarked concept drift detectors across 4 streaming datasets ($\sim$3M data points total) covering abrupt, gradual, incremental, and recurrent drifts, evaluating accuracy, Kappa, and runtime to identify best-fit detectors per scenario.
+    \else
+        \ifhpc
+            \item Benchmarked concept drift detectors across 4 streaming datasets ($\sim$3M data points) with varying drift types, measuring runtime, memory, and CPU usage to characterise scalability and performance trade-offs across detector families.
+        \else
+            \item Evaluated concept drift detectors across 4 streaming datasets ($\sim$3M data points) with abrupt, gradual, incremental, and recurrent drifts, analysing the trade-off between detection sensitivity and classification accuracy across detector families.
+        \fi
+    \fi
 
 \end{itemize}
 

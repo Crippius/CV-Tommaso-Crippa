@@ -10,7 +10,15 @@
 {Crippius/al\_project}}
 \begin{itemize}
 
-    \item Analyzed Active Learning techniques and their impact on neural network training for classifying the relevance of social media posts, improving the data gathering process for handling responses to crises and disasters.
+    \ifde
+        \item Built an active learning pipeline selecting the most informative tweets from 325,000 posts using different selection techniques, reaching F1\,$\sim$0.8 with only 1,000 labels available through hyperparameter tuning.
+    \else
+        \ifhpc
+            \item Built an active learning pipeline selecting the most informative tweets from 325,000 posts using different selection techniques, reaching F1\,$\sim$0.8 with only 1,000 labels available through hyperparameter tuning.
+        \else
+            \item Investigated different active learning strategies on 325,000 crisis-related tweets, demonstrating that selecting 1,000 informative labels available reaches F1\,$\sim$0.8 within a few iterations, approaching great accuracy at a fraction of the full-labelling cost.
+        \fi
+    \fi
 
 \end{itemize}
 

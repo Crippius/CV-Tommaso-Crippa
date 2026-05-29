@@ -7,7 +7,15 @@
 {Crippius/wordle-solver}}
 \begin{itemize}
 
-    \item Assembled a program that solves the popular word game with different methods and increasing success rates, I then developed an easy-to-use helper to use while playing the game and a small clone of the same game to complete the project.
+    \ifde
+        \item Implemented and compared 3 Wordle-solving algorithms with increasing efficiency (random, probability-based, entropy-based), using pre-computed JSON lookup tables to optimise selection speed, and packaged results with matplotlib alongside an interactive helper and a game clone.
+    \else
+        \ifhpc
+            \item Benchmarked 3 Wordle-solving algorithms with increasing efficiency (random, probability-based, entropy-based) using pre-computed JSON score tables for faster lookup, analysing runtime and solution-quality trade-offs between exhaustive entropy search and greedy probability selection.
+        \else
+            \item Implemented and compared 3 Wordle-solving strategies of increasing efficiency (random baseline, probability-based, entropy maximisation) with pre-computed word-score tables, evaluating information-theoretic trade-offs and solution quality.
+        \fi
+    \fi
 
 \end{itemize}
 

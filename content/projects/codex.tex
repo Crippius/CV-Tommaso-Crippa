@@ -7,7 +7,15 @@
 {Crippius/IS24-AM42}}
 \begin{itemize}
 
-    \item Led a team of four members to create a distributed online version of the board game "Codex Naturalis". In addition to meeting the requirements, we implemented server persistence and chat messaging features.
+    \ifde
+        \item Led a team of 4 to build a distributed online version of Codex Naturalis in Java, supporting both TCP/Socket and RMI networking, with server-side state persistence, in-game chat, and dual TUI/GUI clients deployed from a single server.
+    \else
+        \ifhpc
+            \item Led a team of 4 to design and implement a concurrent distributed system in Java supporting simultaneous multiplayer sessions over TCP/Socket and RMI, with server-side game-state persistence and thread-safe message handling for in-game chat.
+        \else
+            \item Led a team of 4 to implement a distributed online board game in Java over TCP/Socket and RMI protocols, delivering server persistence, in-game chat, and dual TUI/GUI clients, completing all required features plus additional extensions.
+        \fi
+    \fi
 
 \end{itemize}
 

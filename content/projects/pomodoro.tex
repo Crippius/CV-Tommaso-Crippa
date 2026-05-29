@@ -7,7 +7,15 @@
 {Crippius/pomodoro-report-generator}}
 \begin{itemize}
 
-    \item Designed an automated program that sends me monthly and yearly reports with some statistics and information about the study hours I completed using the Pomodoro Technique, I then used it to boost my productivity up a notch.
+    \ifde
+        \item Built an automated pipeline that parses multi-year Pomodoro session logs, computes productivity statistics with pandas, generates matplotlib visualisations, assembles a PDF report via fpdf, and delivers it by email on a monthly schedule.
+    \else
+        \ifhpc
+            \item Built an automated pipeline that parses multi-year Pomodoro session logs, computes productivity statistics with pandas, generates matplotlib visualisations, assembles a PDF report via fpdf, and delivers it by email on a monthly schedule.
+        \else
+            \item Built an automated pipeline that parses multi-year Pomodoro session logs, computes productivity statistics with pandas, generates matplotlib visualisations, assembles a PDF report via fpdf, and delivers it by email on a monthly schedule.
+        \fi
+    \fi
 
 \end{itemize}
 

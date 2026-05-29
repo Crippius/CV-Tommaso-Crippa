@@ -1,4 +1,5 @@
 tagline: "High Performance Computing Engineering Student"
+summary: "HPC Engineering student with hands-on experience building data pipelines and ML-backed analytics tools. Proficient in Python, SQL, and Kafka, seeking to apply these skills in scalable data infrastructure and ETL processes."
 
 experiences:
   - megware
@@ -19,9 +20,9 @@ skills:
   tech_stack:
     - python
     - java
-    - spark
     - kafka
     - sql
+    - spark
   infrastructure:
     - git
     - dvc
