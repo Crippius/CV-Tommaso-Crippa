@@ -1,0 +1,71 @@
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{cv}
+\geometry{left=1cm,right=1cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+\usepackage{paracol}
+\usepackage{hyperref}
+
+\usepackage[default]{lato}
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\begin{document}
+\name{Tommaso Crippa}
+\tagline{%%TAGLINE%%}
+\personalinfo{
+	\email{crippa.tommaso@gmail.com}
+	\github{Crippius}
+	\linkedin{tommaso-crippa}
+}
+
+\makecvheader
+
+\AtBeginEnvironment{itemize}{\small}
+
+\columnratio{0.55}
+
+\begin{paracol}{1}
+
+    \cvsection{Education}
+
+        \cveducation{\textbf{Double Master's Degree in High Performance Computing}}{Politecnico di Milano - University of Luxembourg}{2024 - present}{29.25 / 30}
+
+        \begin{itemize}
+
+             \item Selected among top candidates for the exclusive EUMaster4HPC double degree program
+
+          \end{itemize}
+
+          \medskip
+
+
+        \cveducation{\textbf{Bachelor degree in Computer Engineering}}{Politecnico di Milano}{2021 - 2024}{110 cum laude / 110}
+        \begin{itemize}
+
+             \item Won "Migliori Matricole" scholarship for being one of Politecnico di Milano's best freshmen students of the 21/22 season.
+
+          \end{itemize}
+
+        \medskip
+
+        \textit{Relevant courses completed:} %%COURSES%%
+
+    \cvsection{Experiences}
+
+%%EXPERIENCES%%
+
+    \cvsection{Projects}
+
+%%PROJECTS%%
+
+    \cvsection{Skills and Languages}
+
+\textbf{Tech Stack:} %%SKILLS_PROGRAMMING%%
+\textbf{Infrastructure:} %%SKILLS_TOOLS%%
+\textbf{Languages:} {\small Italian (Native), English (Proficient -- IELTS 7.5), German (Beginner -- A2)}
+
+
+\end{paracol}
+
+\end{document}
