@@ -100,3 +100,10 @@
 # Overleaf / editor cruft
 .DS_Store
 Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+
+# pdfx side-effect
+creationdate.lua
