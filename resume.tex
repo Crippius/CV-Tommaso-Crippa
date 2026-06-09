@@ -175,12 +175,12 @@
 \begin{itemize}
 
     \ifde
-        \item Organised and executed technical events on AI, Cloud Computing, and Mobile Development, including talks and workshops for 50+ attendees and a hackathon with 150+ participants, building community around modern data and cloud technologies.
+        \item Organised and executed 5+ technical events over 12 months on AI, Cloud Computing, and Mobile Development, including a hackathon with 150+ participants, doubling community membership over the year.
     \else
         \ifhpc
-            \item Organised and executed technical events on AI, Cloud Computing, and Mobile Development, including talks and workshops for 50+ attendees and a hackathon with 150+ participants, building community around modern data and cloud technologies.
+            \item Organised and executed 5+ technical events over 12 months on AI, Cloud Computing, and Mobile Development, including a hackathon with 150+ participants, doubling community membership over the year.
         \else
-            \item Organised and executed technical events on AI, Cloud Computing, and Mobile Development, including talks and workshops for 50+ attendees and a hackathon with 150+ participants, building community around modern data and cloud technologies.
+            \item Organised and executed 5+ technical events over 12 months on AI, Cloud Computing, and Mobile Development, including a hackathon with 150+ participants, doubling community membership over the year.
         \fi
     \fi
 
@@ -232,6 +232,31 @@
             \item Won the EuroHPC Student Challenge 2025 by parallelising a Branch-and-Bound graph coloring solver with MPI manager/worker on the VEGA supercomputer, achieving near-linear speedup as resource count scales from sequential to multi-task execution.
         \else
             \item Won the EuroHPC Student Challenge 2025 by implementing a parallel Branch-and-Bound framework on VEGA, achieving near-linear speedup with increasing MPI task count and evaluating solution quality across 30 benchmark graphs.
+        \fi
+    \fi
+
+\end{itemize}
+
+\medskip
+
+\cvproject{\textbf{GraphSAGE for Large-Scale Node Classification}} {}
+{\cvtag{\textbf{Python}}
+\cvtag{pytorch}
+\cvtag{PyG}
+\cvtag{\textbf{SLURM}}
+\cvtag{CUDA}
+\cvtag{DDP}}
+{\href{https://github.com/albertofinardi/Sage_GNN}
+{albertofinardi/Sage\_GNN}}
+\begin{itemize}
+
+    \ifde
+        \item Built a graph node classification pipeline on ogbn-products (2.4M nodes, 61M edges) using GraphSAGE with mini-batch neighbor sampling to handle GPU memory constraints, achieving 81\% test accuracy across 47 product categories.
+    \else
+        \ifhpc
+            \item Trained GraphSAGE on ogbn-products (2.4M nodes, 61M edges) on MeluXina with PyTorch DDP, achieving 3.73$\times$ intra-node speedup (93\% efficiency) across 4 A100 GPUs and 2.7$\times$ training time reduction via fanout optimisation across 36 tested configurations.
+        \else
+            \item Applied GraphSAGE to ogbn-products (2.4M nodes, 47 classes), exploring 36 hyperparameter configurations and achieving 81.21\% test accuracy; layer ablation showed 4-hop aggregation is sufficient, with fanout reduction yielding 2.7$\times$ training speedup at negligible accuracy cost.
         \fi
     \fi
 

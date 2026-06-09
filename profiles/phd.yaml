@@ -9,6 +9,7 @@ experiences:
 projects:
   - alzheimer
   - graph-coloring
+  - graphsage
   - active-learning
   - streaming-bench
 
