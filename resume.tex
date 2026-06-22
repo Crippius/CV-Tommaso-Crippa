@@ -1,6 +1,6 @@
-\newif\ifde\defalse
+\newif\ifde\detrue
 \newif\ifhpc\hpcfalse
-\newif\ifphd\phdtrue
+\newif\ifphd\phdfalse
 
 \documentclass[10pt,a4paper,ragged2e,withhyper]{cv}
 \geometry{left=1cm,right=1cm,top=1cm,bottom=1cm,columnsep=0.75cm}
@@ -23,6 +23,9 @@
 }
 
 \makecvheader
+\begin{quote}
+\small HPC Engineering student with hands-on experience building data pipelines and ML-backed analytics tools. Proficient in Python, SQL, and Kafka, seeking to apply these skills in scalable data infrastructure and ETL processes.
+\end{quote}
 
 
 \AtBeginEnvironment{itemize}{\small}
@@ -53,7 +56,7 @@
 
         \medskip
 
-        \textit{Relevant courses completed:} {\small Artificial Neural Networks and Deep Learning, Natural Language Processing, Selected Topics in Artificial Intelligence, Quantum Algorithms, Applied Statistics, Time Series Analysis, Parallel Computing}
+        \textit{Relevant courses completed:} {\small Streaming Data Analytics, Time Series Analysis, Artificial Neural Networks and Deep Learning}
 
 
     \cvsection{Experiences}
@@ -98,71 +101,6 @@
 
 \medskip
 
-\cvexperience{EUMaster4HPC Summer School on HPC for Specialised Applications}
-{Turkey}
-{July 2025}
-{Ankara}
-{\footnotesize\faCode \hspace{1pt}
-\ifde
-    \cvtag{\textbf{AI}}
-    \cvtag{Data Science}
-    \cvtag{NLP}
-    \cvtag{MATLAB}
-\else
-    \ifhpc
-        \cvtag{\textbf{HPC}}
-        \cvtag{CFD}
-        \cvtag{Parallel Programming}
-        \cvtag{NLP}
-    \else
-        \cvtag{\textbf{HPC}}
-        \cvtag{\textbf{AI}}
-        \cvtag{NLP}
-        \cvtag{CFD}
-    \fi
-\fi}
-
-\begin{itemize}
-
-    \ifde
-        \item Attended the EUMaster4HPC Summer School at METU, gaining exposure to lectures on data-intensive workflows in climate modelling, NLP, and financial computing, with industry sessions from MathWorks on MATLAB parallel programming and AI integration.
-    \else
-        \ifhpc
-            \item Attended the EUMaster4HPC Summer School at METU, covering parallel programming, CFD simulations, and AI across aeronautics, materials science, and oceanography, with hands-on industry training from MathWorks and other HPC specialists.
-        \else
-            \item Attended the EUMaster4HPC Summer School at METU, covering HPC-accelerated ML methods, NLP, AI-driven simulation, and data analysis, with research lectures from HPC specialists and hands-on industry training from MathWorks on parallel ML workflows.
-        \fi
-    \fi
-
-\end{itemize}
-
-\medskip
-
-\cvexperience{HPC Ambassador @ EUROHPC Summit}
-{Poland}
-{March 2025}
-{Krakow}
-{\footnotesize\faCode \hspace{1pt}
-\cvtag{\textbf{HPC}}
-\cvtag{\textbf{AI}}
-\cvtag{\textbf{Fluid Dynamics}}}
-
-\begin{itemize}
-
-    \ifde
-        \item Represented the EUMaster4HPC programme at the EuroHPC Summit, demonstrating live LLM deployment and fluid dynamics simulations on Leonardo and Discoverer supercomputers to a broad audience of industry and policy stakeholders.
-    \else
-        \ifhpc
-            \item Represented the EUMaster4HPC programme at the EuroHPC Summit, delivering live demonstrations of fluid dynamics simulations and LLM deployment on two of the biggest EuroHPC supercomputers (Leonardo and Discoverer) to the general public and HPC community.
-        \else
-            \item Represented the EUMaster4HPC programme at the EuroHPC Summit, delivering live demonstrations of Large Language Model deployment and fluid dynamics simulations on the Leonardo and Discoverer supercomputers to an audience of researchers and policymakers.
-        \fi
-    \fi
-
-\end{itemize}
-
-\medskip
-
 \cvexperience{Operations \& Logistic @ Google Developer Group On Campus - Polimi}
 {Italy}
 {August 2024 - August 2025}
@@ -191,72 +129,25 @@
 
     \cvsection{Projects}
 
-\cvproject{\textbf{Early Alzheimer Detection with Deep Learning}} {}
+\cvproject{\textbf{Benchmarking Detectors in Streaming Machine Learning}} {}
 {\cvtag{\textbf{Python}}
-\cvtag{pytorch}
-\cvtag{keras}
-\cvtag{nilearn}
-\cvtag{\textbf{C++}}
-\cvtag{libtorch}
-\cvtag{clinica}
-\cvtag{SLURM}}
-{\href{https://github.com/justvicthor/Early_Alzheimer_Detection_DL}
-{justvicthor/Early\_Alzheimer\_Detection\_DL}}
-\begin{itemize}
-
-\ifde
-    \item Developed a deep learning model for early Alzheimer's detection, achieving Macro-AUC of 0.9197 on the test set, improving upon the original paper (0.80), with full data preprocessing and augmentation pipelines run on the MeluXina supercomputer.
-\else
-    \ifhpc
-        \item Trained a 3D CNN for Alzheimer's classification on the ADNI dataset using the MeluXina EuroHPC supercomputer, implementing SLURM-scheduled preprocessing pipelines and GPU-parallelised training achieving Macro-AUC of 0.9197, up from 0.80 baseline.
-    \else
-        \item Trained a 3D CNN on ADNI structural MRI data for 3-class Alzheimer's staging (CN/MCI/AD), achieving Macro-AUC 0.9197 on the test set and outperforming the original paper baseline of 0.80; used Grad-CAM for interpretability of the decision-making process.
-    \fi
-\fi
-
-\end{itemize}
-
-\medskip
-
-\cvproject{\textbf{High-Performance Graph Coloring with Branch-and-Bound Framework}} {}
-{\cvtag{\textbf{Python}}
-\cvtag{MPI}
-\cvtag{SLURM}}
-{\href{https://github.com/Rudolfovoorg/EuroHPC_Student_Challenge_2025_Team_3}{Rudolfovoorg/EuroHPC\_Student\_Challenge\_2025\_Team\_3}}
+\cvtag{capymoa}
+\cvtag{pandas}
+\cvtag{numpy}
+\cvtag{matplotlib}
+\cvtag{\textbf{Colab}}
+}
+{\href{https://github.com/Streaming-Data-Analytics/2024-2025_Benchmarking-Detectors-in-SML}
+{Streaming-Data-Analytics/Benchmarking-Detectors-in-SML}}
 \begin{itemize}
 
     \ifde
-        \item Won the EuroHPC Student Challenge 2025 by designing a parallel Branch-and-Bound solver for graph chromatic number using an MPI manager/worker architecture on the VEGA supercomputer, achieving near-linear speedup as MPI task count scales.
+        \item Benchmarked concept drift detectors across 4 streaming datasets ($\sim$3M data points total) covering abrupt, gradual, incremental, and recurrent drifts, evaluating accuracy, Kappa, and runtime to identify best-fit detectors per scenario.
     \else
         \ifhpc
-            \item Won the EuroHPC Student Challenge 2025 by parallelising a Branch-and-Bound graph coloring solver with MPI manager/worker on the VEGA supercomputer, achieving near-linear speedup as resource count scales from sequential to multi-task execution.
+            \item Benchmarked concept drift detectors across 4 streaming datasets ($\sim$3M data points) with varying drift types, measuring runtime, memory, and CPU usage to characterise scalability and performance trade-offs across detector families.
         \else
-            \item Won the EuroHPC Student Challenge 2025 by implementing a parallel Branch-and-Bound framework on VEGA, achieving near-linear speedup with increasing MPI task count and evaluating solution quality across 30 benchmark graphs.
-        \fi
-    \fi
-
-\end{itemize}
-
-\medskip
-
-\cvproject{\textbf{GraphSAGE for Large-Scale Node Classification}} {}
-{\cvtag{\textbf{Python}}
-\cvtag{pytorch}
-\cvtag{PyG}
-\cvtag{\textbf{SLURM}}
-\cvtag{CUDA}
-\cvtag{DDP}}
-{\href{https://github.com/albertofinardi/Sage_GNN}
-{albertofinardi/Sage\_GNN}}
-\begin{itemize}
-
-    \ifde
-        \item Built a graph node classification pipeline on ogbn-products (2.4M nodes, 61M edges) using GraphSAGE with mini-batch neighbor sampling to handle GPU memory constraints, achieving 81\% test accuracy across 47 product categories.
-    \else
-        \ifhpc
-            \item Trained GraphSAGE on ogbn-products (2.4M nodes, 61M edges) on MeluXina with PyTorch DDP, achieving 3.73$\times$ intra-node speedup (93\% efficiency) across 4 A100 GPUs and 2.7$\times$ training time reduction via fanout optimisation across 36 tested configurations.
-        \else
-            \item Applied GraphSAGE to ogbn-products (2.4M nodes, 47 classes), exploring 36 hyperparameter configurations and achieving 81.21\% test accuracy; layer ablation showed 4-hop aggregation is sufficient, with fanout reduction yielding 2.7$\times$ training speedup at negligible accuracy cost.
+            \item Evaluated concept drift detectors across 4 streaming datasets ($\sim$3M data points) with abrupt, gradual, incremental, and recurrent drifts, analysing the trade-off between detection sensitivity and classification accuracy across detector families.
         \fi
     \fi
 
@@ -290,27 +181,57 @@
 
 \medskip
 
-\cvproject{\textbf{Benchmarking Detectors in Streaming Machine Learning}} {}
+\cvproject{\textbf{Whatsapp Wrapped}} {}
 {\cvtag{\textbf{Python}}
-\cvtag{capymoa}
-\cvtag{pandas}
-\cvtag{numpy}
 \cvtag{matplotlib}
-\cvtag{\textbf{Colab}}
-}
-{\href{https://github.com/Streaming-Data-Analytics/2024-2025_Benchmarking-Detectors-in-SML}
-{Streaming-Data-Analytics/Benchmarking-Detectors-in-SML}}
+\cvtag{pandas}
+\cvtag{fpdf}
+\cvtag{Flask}
+\cvtag{HTML}
+\cvtag{CSS}
+\cvtag{\textbf{Javascript}}
+\cvtag{Vercel}
+\cvtag{Render}}
+{\href{https://github.com/Crippius/whatsapp-wrapped}
+{Crippius/whatsapp-wrapped}}
 \begin{itemize}
 
     \ifde
-        \item Benchmarked concept drift detectors across 4 streaming datasets ($\sim$3M data points total) covering abrupt, gradual, incremental, and recurrent drifts, evaluating accuracy, Kappa, and runtime to identify best-fit detectors per scenario.
+        \item Built a full-stack web app that transforms WhatsApp chat exports into personalised analytics reports (message trends, word frequency, response times), deployed on Vercel and Render with 100+ users since launch.
     \else
         \ifhpc
-            \item Benchmarked concept drift detectors across 4 streaming datasets ($\sim$3M data points) with varying drift types, measuring runtime, memory, and CPU usage to characterise scalability and performance trade-offs across detector families.
+            \item Developed and deployed a full-stack application that parses WhatsApp chat exports, computes communication statistics, and generates PDF reports, serving 100+ users since launch via Vercel and Render.
         \else
-            \item Evaluated concept drift detectors across 4 streaming datasets ($\sim$3M data points) with abrupt, gradual, incremental, and recurrent drifts, analysing the trade-off between detection sensitivity and classification accuracy across detector families.
+            \item Developed and deployed a full-stack application that parses WhatsApp chat exports, computes communication statistics, and generates PDF reports, serving 100+ users since launch via Vercel and Render.
         \fi
     \fi
+
+\end{itemize}
+
+\medskip
+
+\cvproject{\textbf{Early Alzheimer Detection with Deep Learning}} {}
+{\cvtag{\textbf{Python}}
+\cvtag{pytorch}
+\cvtag{keras}
+\cvtag{nilearn}
+\cvtag{\textbf{C++}}
+\cvtag{libtorch}
+\cvtag{clinica}
+\cvtag{SLURM}}
+{\href{https://github.com/justvicthor/Early_Alzheimer_Detection_DL}
+{justvicthor/Early\_Alzheimer\_Detection\_DL}}
+\begin{itemize}
+
+\ifde
+    \item Developed a deep learning model for early Alzheimer's detection, achieving Macro-AUC of 0.9197 on the test set, improving upon the original paper (0.80), with full data preprocessing and augmentation pipelines run on the MeluXina supercomputer.
+\else
+    \ifhpc
+        \item Trained a 3D CNN for Alzheimer's classification on the ADNI dataset using the MeluXina EuroHPC supercomputer, implementing SLURM-scheduled preprocessing pipelines and GPU-parallelised training achieving Macro-AUC of 0.9197, up from 0.80 baseline.
+    \else
+        \item Trained a 3D CNN on ADNI structural MRI data for 3-class Alzheimer's staging (CN/MCI/AD), achieving Macro-AUC 0.9197 on the test set and outperforming the original paper baseline of 0.80; used Grad-CAM for interpretability of the decision-making process.
+    \fi
+\fi
 
 \end{itemize}
 
@@ -319,9 +240,9 @@
 
     \cvsection{Skills and Languages}
 
-\textbf{Tech Stack:} {\small Python (Advanced), C, C++, PyTorch (Advanced), TensorFlow}
+\textbf{Tech Stack:} {\small Python (Advanced), Java, Kafka, SQL (Advanced), Spark}
 
-\textbf{Infrastructure:} {\small Git (Advanced), SLURM (Advanced), DVC, CUDA}
+\textbf{Infrastructure:} {\small Git (Advanced), DVC, Docker, AWS}
 
 \textbf{Languages:} {\small Italian (Native), English (Proficient -- IELTS 7.5), German (Beginner -- A2)}
 
