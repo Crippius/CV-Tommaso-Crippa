@@ -1,6 +1,6 @@
-\cvexperience{Master's Thesis Student @ MEGWARE Computer Vertrieb und Service GmbH}
+\cvexperience{Master's Thesis Intern @ MEGWARE Computer Vertrieb und Service GmbH}
 {Germany}
-{February 2026 - present}
+{February 2026 - August 2026}
 {Chemnitz}
 {\footnotesize\faCode \hspace{1pt}
 \cvtag{\textbf{HPC}}
@@ -15,22 +15,22 @@
 \begin{itemize}
 
     \ifde
-        \item Building a deployed analytics service that ingests $\sim$5,000 data points per minute from 100+ HPC metrics, applies ML-based anomaly detection, and delivers actionable bottleneck reports to HPC users.
+        \item Built an end-to-end weakly-supervised pipeline that automatically labels and classifies 100+ HPC metrics sampled at $\sim$5,000 data points per minute, with zero human annotation required.
     \else
         \ifhpc
-            \item Developing a performance analysis tool that detects different bottleneck types from 100+ multivariate time-series metrics ingested at $\sim$5,000 data points per minute, using heuristic decision trees and weakly-supervised Random Forest classifiers.
+            \item Developed a diagnosis pipeline analyzing 100+ HPC hardware-counter metrics at $\sim$5,000 data points per minute across compute-bound, memory-bound, and load-imbalance categories, without source-code instrumentation.
         \else
-            \item Developing an ML pipeline that applies an end-to-end ml pipeline to 100+ HPC time-series metrics at $\sim$5,000 data points per minute, detecting 7 bottleneck classes validated on real-world HPC workloads.
+            \item Built a weakly-supervised ML pipeline that diagnoses 7 bottleneck classes from 100+ HPC metrics sampled at $\sim$5,000 data points per minute, trained without any human-labeled data or source-code instrumentation.
         \fi
     \fi
 
     \ifde
-        \item Designing the end-to-end data architecture: from the initial data ingestion and transformation to the automated ml pipeline to enable optimization recommendations without source-code instrumentation.
+        \item Validated against HPAS fault-injection ground truth, reaching 0.954 macro-F1 in cross-validation and generalizing well to unseen hardware with no retraining.
     \else
         \ifhpc
-            \item Implementing an end-to-end pipeline using a dual-strategy engine (heuristic-based and ml-based) to detect pipeline stalls, cache pressure, and intra/inter-node load imbalance without source-code instrumentation.
+            \item Validated against HPAS fault-injection ground truth and generalized well to an unseen architecture with no retraining, reaching 0.954 macro-F1 in leave-one-out cross-validation.
         \else
-            \item Implementing a dual-strategy detection engine combining threshold-based heuristics with Random Forest models trained on weak labels, using tsfresh for automated feature extraction and FDR-based selection across 7 bottleneck types.
+            \item Validated against independent HPAS fault-injection ground truth, reaching 0.954 macro-F1 in leave-one-out cross-validation and generalizing well to an unseen architecture with no retraining.
         \fi
     \fi
 

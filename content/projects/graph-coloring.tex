@@ -6,12 +6,12 @@
 \begin{itemize}
 
     \ifde
-        \item Won the EuroHPC Student Challenge 2025 by designing a parallel Branch-and-Bound solver for graph chromatic number using an MPI manager/worker architecture on the VEGA supercomputer, achieving near-linear speedup as MPI task count scales.
+        \item Won the EuroHPC Student Challenge 2025 by designing a Branch-and-Bound solver combining DSatur-based coloring with dynamic local search clique bounds, solving over half of the provided benchmark graphs to proven optimality.
     \else
         \ifhpc
-            \item Won the EuroHPC Student Challenge 2025 by parallelising a Branch-and-Bound graph coloring solver with MPI manager/worker on the VEGA supercomputer, achieving near-linear speedup as resource count scales from sequential to multi-task execution.
+            \item Won the EuroHPC Student Challenge 2025 by parallelising a Branch-and-Bound solver with a load-balanced MPI manager/worker architecture, scaling to 1024 cores on VEGA to solve over half of the provided benchmark graphs optimally.
         \else
-            \item Won the EuroHPC Student Challenge 2025 by implementing a parallel Branch-and-Bound framework on VEGA, achieving near-linear speedup with increasing MPI task count and evaluating solution quality across 30 benchmark graphs.
+            \item Won the EuroHPC Student Challenge 2025 with a parallel Branch-and-Bound graph-coloring solver (MPI manager/worker, DSatur and dynamic-local-search bounds), solving over half of the provided benchmark graphs to proven optimality on VEGA.
         \fi
     \fi
 

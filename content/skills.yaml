@@ -12,6 +12,7 @@ tech_stack:
   sql: "SQL (Advanced)"
   tensorflow: "TensorFlow"
   pytorch: "PyTorch (Advanced)"
+  pyg: "PyG"
 
 infrastructure:
   git: "Git (Advanced)"

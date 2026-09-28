@@ -13,9 +13,9 @@
         \item Built a graph node classification pipeline on ogbn-products (2.4M nodes, 61M edges) using GraphSAGE with mini-batch neighbor sampling to handle GPU memory constraints, achieving 81\% test accuracy across 47 product categories.
     \else
         \ifhpc
-            \item Trained GraphSAGE on ogbn-products (2.4M nodes, 61M edges) on MeluXina with PyTorch DDP, achieving 3.73$\times$ intra-node speedup (93\% efficiency) across 4 A100 GPUs and 2.7$\times$ training time reduction via fanout optimisation across 36 tested configurations.
+            \item Trained GraphSAGE on ogbn-products (2.4M nodes, 61M edges) on MeluXina with PyTorch DDP, achieving 3.73$\times$ intra-node speedup (93\% efficiency) across 4 A100 GPUs, and pruning final-layer neighbor sampling to cut epoch time 2.7$\times$ beyond an already paper-tuned baseline, across 36 tested configurations.
         \else
-            \item Applied GraphSAGE to ogbn-products (2.4M nodes, 47 classes), exploring 36 hyperparameter configurations and achieving 81.21\% test accuracy; layer ablation showed 4-hop aggregation is sufficient, with fanout reduction yielding 2.7$\times$ training speedup at negligible accuracy cost.
+            \item Applied GraphSAGE to large-scale graph data (2.4M nodes, 47 classes), starting from a config tuned in the original paper, then exploring 36 batch/fanout/DDP variations, cutting epoch time 2.7$\times$ via final-layer sampling pruning at no accuracy cost (81\%).
         \fi
     \fi
 
