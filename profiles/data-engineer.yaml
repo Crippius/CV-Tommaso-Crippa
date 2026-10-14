@@ -6,8 +6,8 @@ experiences:
   - gdg
 
 projects:
+  - hpc-streaming-telemetry
   - streaming-bench
-  - active-learning
   - whatsapp
   - alzheimer
 

@@ -10,7 +10,7 @@ projects:
   - alzheimer
   - graph-coloring
   - graphsage
-  - whatsapp
+  - hpc-streaming-telemetry
 
 courses:
   - parallel-computing

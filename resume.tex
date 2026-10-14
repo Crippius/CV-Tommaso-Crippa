@@ -37,7 +37,7 @@
 
     \cvsection{Education}
 
-        \cveducation{\textbf{Double Master's Degree in High Performance Computing}}{Politecnico di Milano - University of Luxembourg}{2024 - present}{29.25 / 30}
+        \cveducation{\textbf{Double Master's Degree in High Performance Computing}}{Politecnico di Milano - University of Luxembourg}{2024 - 2026}{29.16 / 30}
 
         \begin{itemize}
 
@@ -62,9 +62,9 @@
 
     \cvsection{Experiences}
 
-\cvexperience{Master's Thesis Student @ MEGWARE Computer Vertrieb und Service GmbH}
+\cvexperience{Master's Thesis Intern @ MEGWARE Computer Vertrieb und Service GmbH}
 {Germany}
-{February 2026 - present}
+{February 2026 - August 2026}
 {Chemnitz}
 {\footnotesize\faCode \hspace{1pt}
 \cvtag{\textbf{HPC}}
@@ -79,22 +79,22 @@
 \begin{itemize}
 
     \ifde
-        \item Building a deployed analytics service that ingests $\sim$5,000 data points per minute from 100+ HPC metrics, applies ML-based anomaly detection, and delivers actionable bottleneck reports to HPC users.
+        \item Built an end-to-end weakly-supervised pipeline that automatically labels and classifies 100+ HPC metrics sampled at $\sim$5,000 data points per minute, with zero human annotation required.
     \else
         \ifhpc
-            \item Developing a performance analysis tool that detects different bottleneck types from 100+ multivariate time-series metrics ingested at $\sim$5,000 data points per minute, using heuristic decision trees and weakly-supervised Random Forest classifiers.
+            \item Developed a diagnosis pipeline analyzing 100+ HPC hardware-counter metrics at $\sim$5,000 data points per minute across compute-bound, memory-bound, and load-imbalance categories, without source-code instrumentation.
         \else
-            \item Developing an ML pipeline that applies an end-to-end ml pipeline to 100+ HPC time-series metrics at $\sim$5,000 data points per minute, detecting 7 bottleneck classes validated on real-world HPC workloads.
+            \item Built a weakly-supervised ML pipeline that diagnoses 7 bottleneck classes from 100+ HPC metrics sampled at $\sim$5,000 data points per minute, trained without any human-labeled data or source-code instrumentation.
         \fi
     \fi
 
     \ifde
-        \item Designing the end-to-end data architecture: from the initial data ingestion and transformation to the automated ml pipeline to enable optimization recommendations without source-code instrumentation.
+        \item Validated against HPAS fault-injection ground truth, reaching 0.954 macro-F1 in cross-validation and generalizing well to unseen hardware with no retraining.
     \else
         \ifhpc
-            \item Implementing an end-to-end pipeline using a dual-strategy engine (heuristic-based and ml-based) to detect pipeline stalls, cache pressure, and intra/inter-node load imbalance without source-code instrumentation.
+            \item Validated against HPAS fault-injection ground truth and generalized well to an unseen architecture with no retraining, reaching 0.954 macro-F1 in leave-one-out cross-validation.
         \else
-            \item Implementing a dual-strategy detection engine combining threshold-based heuristics with Random Forest models trained on weak labels, using tsfresh for automated feature extraction and FDR-based selection across 7 bottleneck types.
+            \item Validated against independent HPAS fault-injection ground truth, reaching 0.954 macro-F1 in leave-one-out cross-validation and generalizing well to an unseen architecture with no retraining.
         \fi
     \fi
 
@@ -130,6 +130,31 @@
 
     \cvsection{Projects}
 
+\cvproject{\textbf{HPC Streaming Telemetry Pipeline}} {}
+{\cvtag{\textbf{Python}}
+\cvtag{\textbf{Kafka}}
+\cvtag{\textbf{Spark}}
+\cvtag{TimescaleDB}
+\cvtag{Docker}
+\cvtag{Grafana}}
+{\href{https://github.com/Crippius/hpc-streaming-telemetry}
+{Crippius/hpc-streaming-telemetry}}
+\begin{itemize}
+
+    \ifde
+        \item Built an end-to-end streaming pipeline replaying Marconi100 supercomputer telemetry (6.3M events) through Kafka and Avro into Spark Structured Streaming and TimescaleDB, sustaining 74k messages/s at 3.3\,s median latency, with idempotent upserts producing no lost or duplicated windows after a mid-run Spark kill.
+    \else
+        \ifhpc
+            \item Built a Kafka and Spark Structured Streaming pipeline over Marconi100 supercomputer telemetry (6.3M events), sustaining 74k messages/s at 3.3\,s median end-to-end latency, and evaluated online node-drain detection and 1-hour anticipation on 146 nodes over 2.5 years, with exactly-once windows across a Spark restart.
+        \else
+            \item Built a Kafka and Spark streaming pipeline over Marconi100 supercomputer telemetry and evaluated online detectors for drained nodes on 146 nodes over 2.5 years; showed that generic unsupervised detectors fail (AUC 0.59) while a streaming model retrained every four weeks needs $\sim$4$\times$ fewer false alerts than the best single-feature rule at equal recall.
+        \fi
+    \fi
+
+\end{itemize}
+
+\medskip
+
 \cvproject{\textbf{Benchmarking Detectors in Streaming Machine Learning}} {}
 {\cvtag{\textbf{Python}}
 \cvtag{capymoa}
@@ -149,32 +174,6 @@
             \item Benchmarked concept drift detectors across 4 streaming datasets ($\sim$3M data points) with varying drift types, measuring runtime, memory, and CPU usage to characterise scalability and performance trade-offs across detector families.
         \else
             \item Evaluated concept drift detectors across 4 streaming datasets ($\sim$3M data points) with abrupt, gradual, incremental, and recurrent drifts, analysing the trade-off between detection sensitivity and classification accuracy across detector families.
-        \fi
-    \fi
-
-\end{itemize}
-
-\medskip
-
-\cvproject{\textbf{Active Learning for Social Media Data Classification}} {}
-{\cvtag{\textbf{Python}}
-\cvtag{tensorflow}
-\cvtag{matplotlib}
-\cvtag{numpy}
-\cvtag{pandas}
-\cvtag{\textbf{Colab}}
-}
-{\href{https://github.com/Crippius/al_project}
-{Crippius/al\_project}}
-\begin{itemize}
-
-    \ifde
-        \item Built an active learning pipeline selecting the most informative tweets from 325,000 posts using different selection techniques, reaching F1\,$\sim$0.8 with only 1,000 labels available through hyperparameter tuning.
-    \else
-        \ifhpc
-            \item Built an active learning pipeline selecting the most informative tweets from 325,000 posts using different selection techniques, reaching F1\,$\sim$0.8 with only 1,000 labels available through hyperparameter tuning.
-        \else
-            \item Investigated different active learning strategies on 325,000 crisis-related tweets, demonstrating that selecting 1,000 informative labels available reaches F1\,$\sim$0.8 within a few iterations, approaching great accuracy at a fraction of the full-labelling cost.
         \fi
     \fi
 
