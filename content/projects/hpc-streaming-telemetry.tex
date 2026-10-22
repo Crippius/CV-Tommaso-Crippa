@@ -15,7 +15,7 @@
         \ifhpc
             \item Built a Kafka and Spark Structured Streaming pipeline over Marconi100 supercomputer telemetry (6.3M events), sustaining 74k messages/s at 3.3\,s median end-to-end latency, and evaluated online node-drain detection and 1-hour anticipation on 146 nodes over 2.5 years, with exactly-once windows across a Spark restart.
         \else
-            \item Built a Kafka and Spark streaming pipeline over Marconi100 supercomputer telemetry and evaluated online detectors for drained nodes on 146 nodes over 2.5 years; showed that generic unsupervised detectors fail (AUC 0.59) while a streaming model retrained every four weeks needs $\sim$4$\times$ fewer false alerts than the best single-feature rule at equal recall.
+            \item Built a Kafka/Spark streaming pipeline over Marconi100 telemetry for 1-hour-ahead drain anticipation on 146 nodes over 2.5 years; a gradient-boosted model refit every four weeks matched the best single-feature rule in AUC with $\sim$4$\times$ fewer false alerts.
         \fi
     \fi
 
